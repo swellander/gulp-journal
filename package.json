@@ -9,9 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "browserify": "^16.1.0"
+    "browserify": "^16.1.0",
+    "gulp-concat": "^2.6.1"
   },
   "devDependencies": {
-    "jshint": "^2.9.5"
+    "gulp": "^3.9.1",
+    "jshint": "^2.9.5",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
