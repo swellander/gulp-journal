@@ -35,4 +35,24 @@ Entry.prototype.howManyConsonants = function(entry) {
     return consonantCount
 }
 
+Entry.prototype.getTeaser = function(entryBody) {
+    var teaser = [];
+
+    entryBody.split(' ').forEach(function(word, index) {
+        var notEnd = word.indexOf('.') === -1;
+        
+        if (notEnd && index < 8) {
+            teaser.push(word);
+        }
+    })
+
+    teaser = teaser.join(' ');
+
+    if (teaser[teaser.length -1] !== '.') {
+        teaser += '...';
+    }
+
+    return teaser;
+}
+
 exports.entryModule = Entry;
