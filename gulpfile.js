@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync');
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
+var lib = require('bower-files')();
 
 
 gulp.task('serve', function() {
@@ -42,6 +43,15 @@ gulp.task('JShint', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
+
+//join all front end js dependencies together
+gulp.task('bowerJS', function() {
+    return gulp.src(lib.ext('js').files)
+        .pipe(concat('vendor.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./build/js'));
+});
+
 
 gulp.task('jsBuild', ['JSbrowserify', 'JShint'], function() {
     browserSync.reload();
