@@ -17,7 +17,7 @@ $(document).ready(function() {
     //reset body input
     $('#body-input').val('');
 
-    $('#entries').append('<div class="entry-unit"><h3 class="title-display">' + entry.title + '</h3><p class="body-display">' + entry.getTeaser(entry.body) + '</p><p class="full-body hidden">' + entry.body + '</p><h2 class="view-more">View More</h2><hr><button class="word-count">Count Words</button><button class="vowel-count">Count Vowels</button></div>');
+    $('#entries').append('<div class="entry-unit"><h3 class="title-display">' + entry.title + '</h3><p class="body-display">' + entry.getTeaser(entry.body) + '</p><p class="full-body hidden">' + entry.body + '</p><h2 class="view-more">View More</h2><br><p>Created at: ' + moment() + '</p><hr><button class="word-count">Count Words</button><button class="vowel-count">Count Vowels</button></div>');
   })
 
   //expand teaser into full entry onclic

@@ -5,7 +5,7 @@ function Entry(title) {
 Entry.prototype.howManyWords = function(entry) {
   var entryArr = entry.split(' ');
   return entryArr.length;
-}
+};
 
 Entry.prototype.howManyVowels = function(entry) {
   var entryArr = entry.replace(/[\. ,:-]+/g, "-").split('');
@@ -16,10 +16,10 @@ Entry.prototype.howManyVowels = function(entry) {
       if (vowels.indexOf(letter) !== -1) {
           vowelCount ++;
       }
-  })
+  });
 
   return vowelCount;
-}
+};
 
 Entry.prototype.howManyConsonants = function(entry) {
     var entryArr = entry.replace(/[\. ,:-]+/g, "-").split('');
@@ -32,8 +32,8 @@ Entry.prototype.howManyConsonants = function(entry) {
         }
     });
 
-    return consonantCount
-}
+    return consonantCount;
+};
 
 Entry.prototype.getTeaser = function(entryBody) {
     var teaser = [];
@@ -44,7 +44,7 @@ Entry.prototype.getTeaser = function(entryBody) {
         if (notEnd && index < 8) {
             teaser.push(word);
         }
-    })
+    });
 
     teaser = teaser.join(' ');
 
@@ -53,6 +53,6 @@ Entry.prototype.getTeaser = function(entryBody) {
     }
 
     return teaser;
-}
+};
 
 exports.entryModule = Entry;
